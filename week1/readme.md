@@ -1,1 +1,5 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+
+In the tutorial of week 1, I have learned few components of VS code. First thing I thought will be usefull was the debug function. I assume I can use that to check and spot any errors which cause the program to not run properly. Second thing I learned was Python's one of the basic functions, "Print". The print function can be used to print a valuable such as words, numbers and some symbols. Third thing I learned was ways to take notes in the script. One way is to start a line with """ and end with the same. Another way is simply start a line with #. In these two ways, Python will just ignore the notes that I put in the script.
+
+Unfortunetly, there are two things that are still unclear for me. One is how Anaconda can be used in Python coding with two other softwares, VS code and GitHub. Another fact, which is still confuseing is how the action that used "Pull from" and "upstream" in the source control feature was necessary to do. I am not asure what that action did or changed some settings.

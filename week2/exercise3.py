@@ -59,11 +59,9 @@ def loops_1a():
 
 def loops_1c(number_of_items=5, symbol="#"):
     loops_1c = []
-    for number in range(5):
-        loops_1c.append("#")
-    return(loops_1c)
-    return len(loops_1c)
-    
+    for i in range(number_of_items):
+        loops_1c.append(symbol)
+    return loops_1c
 
     """Respond to variables.
 
@@ -76,10 +74,7 @@ def loops_1c(number_of_items=5, symbol="#"):
 
 
 def loops_2():
-    loops_1a = []
-    for number in range(0, 10):
-        loops_1a.append("*")
-    return(loops_1a)
+    
     """Make a big square starfield.
 
     return a list of 10 items, each one a list of 10 items,
@@ -97,10 +92,23 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-
-
+    returnlist = []
+    for x in range(0,10):
+        tmp = []
+        for y in range(0,10):
+            tmp.append("*")
+        returnlist.append(tmp)
+    return returnlist
 
 def loops_3():
+    returnlist_1 = []
+    for x in range(0,10):
+        tmp_1 = []
+        for y in range(0,10):
+            tmp_1.append(str(x))
+        returnlist_1.append(tmp_1)
+    return returnlist_1
+
     """Make a rising block of numbers.
 
     Return this:
@@ -123,6 +131,7 @@ def loops_3():
     """
 
 def loops_4():
+
     """Make a block of numbers that rises left to right.
 
     Return this:
@@ -139,10 +148,18 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
+    returnlist_2 = []
+    for x in range(0,10):
+        tmp_2 = []
+        for y in range(0,10):
+            tmp_2.append(str(y))
+        returnlist_2.append(tmp_2)
+    return returnlist_2
 
 
 
 def loops_5():
+
     """Make the coordinates of the block.
 
     Return this:
@@ -164,16 +181,22 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-
-
+    returnlist = []
+    for i in range(0,10):
+        tmp = []
+        for j in range(0,5):
+            tmp.append("(i" + str(i) + ", j" + str(j) + ")")
+        returnlist.append(tmp)
+    return returnlist 
 
 def loops_6():
-    for i in range (1, 11):
-        for j in range(11 - i):
-            print(" ", end = "")
-        for j in range(1, i):
-            print(j, end = "")
-    print("\n")
+    returnlist = []
+    for i in range(0,10):
+        tmp = []
+        for j in range(0, i + 1):
+            tmp.append(str(j))
+        returnlist.append(tmp)
+    return returnlist
 
     """Make a wedge of numbers.
 
@@ -198,8 +221,21 @@ def loops_6():
 
 
 def loops_7():
-    for i in range(6):
-        print(' '*(6-i-1)+'*'*(i+1)+" ")
+    returnlist = []
+    for i in range(0, 5):
+        tmp = []
+        for j in range(0, 9):
+            tmp.append("*")
+            if i + j < 4:
+                tmp[j] = " "
+            asterisk = i+4
+            if j > asterisk:
+                tmp[j] = " "
+        returnlist.append(tmp)
+            
+    return (returnlist)
+    
+
 
     """Make a pyramid.
 

@@ -62,6 +62,8 @@ def loops_1c(number_of_items=5, symbol="#"):
     for number in range(5):
         loops_1c.append("#")
     return(loops_1c)
+    return len(loops_1c)
+    
 
     """Respond to variables.
 
@@ -74,6 +76,10 @@ def loops_1c(number_of_items=5, symbol="#"):
 
 
 def loops_2():
+    loops_1a = []
+    for number in range(0, 10):
+        loops_1a.append("*")
+    return(loops_1a)
     """Make a big square starfield.
 
     return a list of 10 items, each one a list of 10 items,
@@ -164,9 +170,9 @@ def loops_5():
 def loops_6():
     for i in range (1, 11):
         for j in range(11 - i):
-            print(" ", end = " ")
+            print(" ", end = "")
         for j in range(1, i):
-            print(j, end = " ")
+            print(j, end = "")
     print("\n")
 
     """Make a wedge of numbers.
@@ -188,10 +194,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    pass
+
 
 
 def loops_7():
+    for i in range(6):
+        print(' '*(6-i-1)+'*'*(i+1)+" ")
+
     """Make a pyramid.
 
     Return this:
@@ -212,7 +221,7 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    pass
+
 
 
 def lp(some_kind_of_list, exercise_name):

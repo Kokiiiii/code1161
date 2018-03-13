@@ -3,14 +3,32 @@
 
 
 def is_odd(a_number):
+    if a_number%2 == 0:
+        return(False)
+    else:
+        return(True)
+
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    pass
+
 
 
 def fix_it(moves=True, should_move=True):
+    
+    moves == True
+    should_move == True
+    if (moves == True and should_move == True):
+        return("No Problem")
+    elif (moves == True and should_move == False):
+        return("Duct Tape")
+    elif (moves == False and should_move == True):
+        return("WD-40")
+    else:
+        return("No Problem")
+
+
     """Decide what to do.
 
     Using the engineering flowchart (in week2 folder engineeringFlowchart.png)
@@ -21,21 +39,30 @@ def fix_it(moves=True, should_move=True):
     "Duct Tape"
     "No Problem"
     """
-    pass
 
 
 def loops_1a():
+    loops_1a = []
+    for number in range(10):
+        loops_1a.append("*")
+    return(loops_1a)
+
     """Make 10 stars.
 
     Using a for loop
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    pass
+
 
 
 
 def loops_1c(number_of_items=5, symbol="#"):
+    loops_1c = []
+    for number in range(5):
+        loops_1c.append("#")
+    return(loops_1c)
+
     """Respond to variables.
 
     using any method
@@ -43,7 +70,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    pass
+
 
 
 def loops_2():
@@ -64,7 +91,7 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    pass
+
 
 
 def loops_3():
@@ -88,8 +115,6 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    pass
-
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -108,7 +133,7 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    pass
+
 
 
 def loops_5():
@@ -133,10 +158,17 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    pass
+
 
 
 def loops_6():
+    for i in range (1, 11):
+        for j in range(11 - i):
+            print(" ", end = " ")
+        for j in range(1, i):
+            print(j, end = " ")
+    print("\n")
+
     """Make a wedge of numbers.
 
     Return this:

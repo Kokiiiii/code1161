@@ -8,65 +8,111 @@ Modify each function until the tests pass.
 
 
 def loop_ranger(start, stop=None, step=1):
+
+    list1 = []
+    while start < stop:
+        list1.append(start)
+        start += step
+    
+    return(list1)
+
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from just using range()
     """
-    pass
 
 
 def lone_ranger(start, stop, step):
+    return list(range(start, stop, step))
     """Duplicate the functionality of range.
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    pass
+    
 
 
 def two_step_ranger(start, stop):
+    return list(range(start, stop, 2))
     """Make a range that steps by 2.
 
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    pass
 
 
-def gene_krupa_range(start, stop, even_step, odd_step):
-    """Make a range that has two step sizes.
 
-    make a list that instead of having evenly spaced steps
-    has odd steps be one size and even steps be another.
-    """
-    pass
+# def gene_krupa_range(start, stop, even_step, odd_step):
+#     return list(range(start, stop, 2, 1))
+#     """Make a range that has two step sizes.
+
+#     make a list that instead of having evenly spaced steps
+#     has odd steps be one size and even steps be another.
+#     """
+
 
 
 def stubborn_asker(low, high):
+
+    message = "Give me a number between {low}, and {high}:".format(low=low,high=high)
+    while True:
+        input_number = int(input(message))
+        if low < input_number < high:
+            print("{} Looks good.".format(input_number))
+            return input_number
+        else:
+            print("{input} isn't between {low}, {high}".format(input=input_number, 
+                                                               low=low, 
+                                                               high=high))
+        
+
     """Ask for a number between low and high until actually given one.
 
     Ask for a number, and if the response is outside the bounds keep asking
     until you get a number that you think is OK
     """
-    pass
+
 
 
 def not_number_rejector(message):
+    message = "Give me a number:"
+    while True:
+        try:
+            input_number = int(input(message))
+            print("{} looks good.".format(input_number))
+            return input_number
+        except Exception as e:
+            print("try again ({})".format(e))
+
     """Ask for a number repeatedly until actually given one.
 
     Ask for a number, and if the response is actually NOT a number (e.g. "cow",
     "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    pass
+
 
 
 def super_asker(low, high):
+    message = "Give me a number between {low}, and {high}:".format(low=low,high=high)
+    while True:
+        try:
+            input_number = int(input(message))
+            if low < input_number < high:
+                print("{} looks good.".format(input_number))
+                return input_number
+        except Exception as e:
+            print("try again ({})".format(e))
+            
+        else:
+            print("{input} isn't between {low}, {high}".format(input=input_number, 
+                                                               low=low, 
+                                                               high=high))
     """Robust asking function.
 
     Combine stubborn_asker and not_number_rejector to make a function
     that does it all!
     """
-    pass
+
 
 
 if __name__ == "__main__":
@@ -80,7 +126,7 @@ if __name__ == "__main__":
     print("\nloop_ranger", loop_ranger(1, 10, 2))
     print("\nlone_ranger", lone_ranger(1, 10, 3))
     print("\ntwo_step_ranger", two_step_ranger(1, 10))
-    print("\ngene_krupa_range", gene_krupa_range(1, 20, 2, 5))
+    # print("\ngene_krupa_range", gene_krupa_range(1, 20, 2, 5))
     print("\nstubborn_asker")
     stubborn_asker(30, 45)
     print("\nnot_number_rejector")

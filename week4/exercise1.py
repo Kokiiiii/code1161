@@ -87,7 +87,17 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+
+
+
+    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1"
+    minLength=3
+    maxLength=20
+
+    return list(range(3, 20, 2))
+
+
+
 
 
 def wunderground():
@@ -130,7 +140,11 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    pass
+    laser_cut = json.load("Trispokedovetiles(laser).gcode").read()
+    with open('lasers.pew', 'r') as infile:
+        number = collections.Counter(l.strip() for l in infile)
+    print(number)
+    
 
 
 if __name__ == "__main__":

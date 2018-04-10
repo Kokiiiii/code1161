@@ -65,12 +65,13 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    hypotenuse = base * height
-    return hypotenuse
+    hypotenuse = base*base+height*height
+    return(hypotenuse)
 
 
 def calculate_area(base, height):
-    
+    area = (base*height)/2
+    return(area)
 
 
 def calculate_perimeter(base, height):

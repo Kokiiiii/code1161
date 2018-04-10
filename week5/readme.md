@@ -1,3 +1,3 @@
 TODO: Reflect on what you learned this week and what is still unclear.
 
-I have learned that resursion is the recoding/improving process of exisiting code. I have attempted to work on the exercises, however, I wasn't sure 
+I have learned that resursion is the recoding/improving process of exisiting code. I have attempted to work on the exercises, however, I wasn't sure what I am supporsed to do from the triangle part and the way to do it. In addition, my debugging tool got strange and I couldn't check my works properly. This made me so confused if some works that I Have done are fine or not. The complex mathematical functions are confusing in python for me still. 

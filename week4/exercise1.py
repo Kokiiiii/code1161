@@ -34,19 +34,15 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
-    mode = "r"
     json_data = open(LOCAL + "/lazyduck.json").read()
-    
-    
 
     data = json.loads(json_data)
-    data("results", 0, "name", "title")
-    return {"lastName":       None,
-            "password":       None,
-            "postcodePlusID": None
+    result = data["results"][0]
+    return {"lastName":       result["name"]["last"],
+            "password":       result["login"]["password"],
+            "postcodePlusID": result["location"]["postcode"] +
+            int(result["id"]["value"])
             }
-    return data
-
     
 
 
@@ -89,13 +85,18 @@ def wordy_pyramid():
     """
 
 
-
-    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1"
-    minLength=3
-    maxLength=20
-
     return list(range(3, 20, 2))
 
+    pyramid1 = []
+    pyramid2 = []
+    url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=1"
+    for length in range(3, 21):
+        if length % 2 == 1:
+            pyramid1.append(requests.get(url.format(length, length)).json()[0]['word'])
+        else:
+            pyramid2 = [requests.get(url.format(length, length)).json()[0]['word']] + pyramid2
+
+    return pyramid1 + pyramid2
 
 
 
@@ -111,8 +112,8 @@ def wunderground():
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
+    base = "http://api.wunderground.com/api"
+    api_key = "2a7730bdd6f6ff60"
     country = "AU"
     city = "Sydney"
     template = "{base}/{key}/conditions/q/{country}/{city}.json"
@@ -121,11 +122,12 @@ def wunderground():
     the_json = json.loads(r.text)
     obs = the_json['current_observation']
 
-    return {"state":           None,
-            "latitude":        None,
-            "longitude":       None,
-            "local_tz_offset": None}
-
+    dict1 = {"state":           obs["display_location"]["state"],
+             "latitude":        obs["display_location"]["latitude"],
+             "longitude":       obs["display_location"]["longitude"],
+             "local_tz_offset": obs["local_tz_offset"]}
+    print(str(dict1))
+    return dict1
 
 def diarist():
     """Read gcode and find facts about it.
@@ -140,10 +142,19 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    laser_cut = json.load("Trispokedovetiles(laser).gcode").read()
-    with open('lasers.pew', 'r') as infile:
-        number = collections.Counter(l.strip() for l in infile)
-    print(number)
+    count = 0
+    laser_file = 'Trispokedovetiles(laser).gcode'
+    with open(laser_file, 'r') as laser:
+        commands = laser.read().split('\n')
+        for command in commands:
+            if "M10 P1" in command:
+                count += 1
+
+    pew_file = 'lasers.pew'
+    with open(pew_file, 'w') as pew:
+        pew.write(str(count))
+    return count
+
     
 
 

@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+I have learned that the data project will be based on any dataset such as pokemon statistics. So I started to look at some datasets. I got an idea to use one of the datasets which deal with countries' statistics and this might be handy. Such as the statistics of number of people killed in traffic accidents would be possible to do and I found the dataset for it. However, the tutor said that coding a global map is a bit tricky. Therefore, I need to research how to do that soon. 

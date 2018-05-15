@@ -1,1 +1,3 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+
+I have decided to work on the drug use by age and its relationship to the number of murder offenders as my topic. I am trying to figure out if they have any correlations. To investigate, I started off with outputting the table of those datasets. Next thing I tried was to create the bar graph. However, this step is not going great so far as I am still not able to code it somehow. I tried few gaphing codes, but none of them work. Therefore, I need to find out the way to solve this problem. 

@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Finally my graphs are working. I used plotly to code multiple data into 1 graph. Also, I have learnt how to a way to make a table from some arrays. I was able to output some images by using html. 
